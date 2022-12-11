@@ -1,0 +1,110 @@
+%%% Работа с русским языком \usepackage{cmap}     % поиск в PDF
+\usepackage{mathtext}     % русские буквы в фомулах
+\usepackage[T2A]{fontenc}   % кодировка
+\usepackage[utf8]{inputenc}   % кодировка исходного текста
+\usepackage[english,russian]{babel} % локализация и переносы
+
+%%% Работа с таблицами
+\usepackage{array,tabularx,tabulary,booktabs} % Дополнительная работа с таблицами
+\usepackage{longtable}  % Длинные таблицы
+\usepackage{multirow} % Слияние строк в таблице
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}} % центрированные
+\newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}} % столбцы
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
+%%% Работа со списками
+\usepackage{enumitem} % configure lists
+\setlist{noitemsep,topsep=0pt} % separation
+\setlist{nosep} % separation
+\setlist[itemize,1]{label=$\triangleleft$} % triangles looking to the left
+
+%%% Программирование
+\usepackage{xparse}
+\usepackage{etoolbox} % логические операторы
+\usepackage{xstring}  % macros for manipulating strings
+\usepackage{datetime} % работа со временем
+\usepackage{pgffor}
+
+%%% Страница
+\usepackage{extsizes} % Возможность сделать 14-й шрифт
+\usepackage[
+    top=20mm,
+    bottom=35mm,
+    left=10mm,
+    right=10mm
+]{geometry} % Простой способ задавать поля
+
+\usepackage{fancyhdr}\pagestyle{fancy} % Колонтитулы [headers and footers of pages
+    \renewcommand{\headrulewidth}{0mm}  % Толщина линейки, отчеркивающей верхний колонтитул
+    \fancyhf{}  % очищаем все колонтитулы
+
+\usepackage{setspace} % Интерлиньяж
+    \setstretch{1}
+\setlength{\parindent}{0em} % space before par
+\setlength{\parskip}{1em}   % spacing between pars
+
+\usepackage{csquotes} % Русские кавычки
+\DeclareQuoteStyle{russian}
+    {\guillemotleft}{\guillemotright}[0.025em]
+    {\quotedblbase}{\textquotedblleft}
+\ExecuteQuoteOptions{style=russian}
+
+\usepackage{lastpage} % Узнать, сколько всего страниц в документе.
+
+\usepackage{soulutf8} % Модификаторы начертания
+
+\usepackage{hyperref}
+\usepackage[usenames,dvipsnames,svgnames,table,rgb]{xcolor}
+\hypersetup{    % Гиперссылки
+    unicode=true,           % русские буквы в раздела PDF
+    pdftitle={database handbook},   % Заголовок
+    pdfauthor={kipparis49},      % Автор
+    pdfsubject={database},      % Тема
+    pdfcreator={kipparis49}, % Создатель
+    pdfproducer={Производитель}, % Производитель
+    pdfkeywords={big data} {database} {sql}, % Ключевые слова
+    colorlinks=true,        % false: ссылки в рамках; true: цветные ссылки
+    linkcolor=red,          % внутренние ссылки
+    citecolor=green,        % на библиографию
+    filecolor=magenta,      % на файлы
+    urlcolor=cyan           % на URL
+}
+
+\renewcommand{\familydefault}{\sfdefault} % Начертание шрифта
+
+\usepackage{multicol} % Несколько колонок
+
+\usepackage[]{amsmath}  % работа с матешой
+% \usepackage{amssymb}
+
+\usepackage{makeidx} \makeindex % индекс 
+
+%%% библиография
+%%% библиография
+\usepackage[
+    backend=biber
+]{biblatex}
+\addbibresource{sample.bib}
+\nocite{*} % выводит книгу, даже если я ее нигде не указал
+% \usepackage[nottoc]{tocbibind} % выводит ссылки в страницу содержания
+
+% \frenchspacing
+%
+% \usepackage{listings}
+% \usepackage{alltt}
+%
+% \def\@xobeysp{ }
+% \def\verbatim@processline{\hspace{1.2cm}\raggedright\the\verbatim@line\par}
+%
+% \oddsidemargin=-0.4mm
+% \textwidth=160mm
+% \topmargin=4.6mm
+% \textheight=210mm
+%
+% \parindent=0pt
+% \parskip=3pt
+%
+% \definecolor{lightgray}{gray}{0.9}
+%
+%
+% \renewcommand{\thesubsection}{\arabic{subsection}}

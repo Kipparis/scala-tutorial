@@ -1,0 +1,18 @@
+\documentclass[pdf, unicode, 12pt, a4paper,oneside,fleqn]{article}
+% \documentclass[12pt]{article}
+
+\usepackage{styles/log-style}
+
+\begin{document}
+
+\tableofcontents
+\newpage\printindex
+
+\newpage\input{src/content}
+
+\newpage\printbibliography[
+    heading = bibintoc,
+    title   = {Bibliography}
+]
+
+\end{document}
